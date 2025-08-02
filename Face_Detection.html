@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+// Load face-api.js models
+    Promise.all([
+      faceapi.nets.tinyFaceDetector.loadFromUri('/models'),
+      faceapi.nets.faceLandmark68Net.loadFromUri('/models')
+    ]).then(() => console.log('Models loaded'));
+
+    imageUpload.addEventListener('change', async () => {
+      const file = imageUpload.files[0];
+      const img = await faceapi.bufferToImage(file);
+      const displaySize = { width: img.width, height: img.height };
+      canvas.width = img.width;
+      canvas.height = img.height;
+      const context = canvas.getContext('2d');
+      context.drawImage(img, 0, 0);
+
+      const detections = await faceapi.detectSingleFace(canvas, new faceapi.TinyFaceDetectorOptions()).withFaceLandmarks();
+
+      if (!detections) {
+        output.textContent = "No face detected.";
+        return;
+      }
+
+      const landmarks = detections.landmarks;
+      const jaw = landmarks.getJawOutline();
+      const cheekWidth = distance(landmarks.positions[2], landmarks.positions[14]);
+      const foreheadToChin = distance(landmarks.positions[27], landmarks.positions[8]);
+      const jawlineLength = distance(landmarks.positions[3], landmarks.positions[13]);
+
+      // Basic logic to estimate face shape
+      let shape = 'Unknown';
+      const ratio = cheekWidth / foreheadToChin;
+
+      if (ratio > 1.4) {
+        shape = 'Round';
+      } else if (Math.abs(cheekWidth - jawlineLength) < 20) {
+        shape = 'Square';
+      } else if (foreheadToChin > cheekWidth) {
+        shape = 'Oval';
+      }
+
+      output.textContent = `Detected Face Shape: ${shape}`;
+    });
+
+    function distance(pt1, pt2) {
+      return Math.hypot(pt1.x - pt2.x, pt1.y - pt2.y);
+    }
+  </script>
+  </body>
+  </html>
+

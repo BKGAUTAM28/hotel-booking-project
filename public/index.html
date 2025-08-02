@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Trial</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="index.css">
+   <link rel="icon" href="data:,">
+
+</head>
+<body>
+    <!-- Header/Hero Section -->
+    <header class="hero">
+        <nav id="navbar">
+            <div class="logo">HAIR ARTISTRY</div>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#stylists">Barbers</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="burger">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+        </nav>
+        
+        <div class="hero-content">
+            <h1>Precision Cuts For The Modern Man</h1>
+            <p>Experience premium barber services in a classic yet contemporary environment</p>
+            <div class="btn-container">
+                <a href="#services" class="btn">Our Services</a>
+                <a href="#" class="btn btn-outline" onclick="openBookingForm('General Appointment')">Book Now</a>
+            </div>
+        </div>
+        
+        <div class="scroll-down" onclick="scrollToSection('services')">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-subtitle">From classic cuts to modern styles, we offer a range of premium grooming services tailored for the discerning gentleman</p>
+        
+        <div class="services-grid">
+            <!-- Service 1 -->
+            <div class="service-card">
+                <img src="img\images.jpeg" alt="Classic Haircut">
+                <div class="service-info">
+                    <h3>Classic Haircut</h3>
+                    <p>A precision cut with clippers and scissors, finished with a straight razor neck shave</p>
+                    <span class="price">40 - 60</span>
+                    <div class="service-meta">
+                        <span class="duration"><i class="far fa-clock"></i> 45 min</span>
+                        <button class="book-btn" onclick="openBookingForm('Classic Haircut')">Book Now</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Service 2 -->
+            <div class="service-card">
+                <img src="img/beard trim.jpeg" alt="Beard Trim">
+                <div class="service-info">
+                    <h3>Beard Trim & Shape</h3>
+                    <p>Expert shaping and trimming with scissors and clippers, finished with hot towel treatment</p>
+                    <span class="price">30 - 45</span>
+                    <div class="service-meta">
+                        <span class="duration"><i class="far fa-clock"></i> 30 min</span>
+                        <button class="book-btn" onclick="openBookingForm('Beard Trim & Shape')">Book Now</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Service 3 -->
+            <div class="service-card">
+                <img src="img/hot-towel-shave.jpg" alt="Hot Towel Shave">
+                <div class="service-info">
+                    <h3>Hot Towel Shave</h3>
+                    <p>The ultimate traditional shave experience with hot towels, pre-shave oil, and straight razor</p>
+                    <span class="price">50 - 70</span>
+                    <div class="service-meta">
+                        <span class="duration"><i class="far fa-clock"></i> 45 min</span>
+                        <button class="book-btn" onclick="openBookingForm('Hot Towel Shave')">Book Now</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Service 4 -->
+            <div class="service-card">
+                <img src="img/hair color.jpeg" alt="Hair Color">
+                <div class="service-info">
+                    <h3>Hair Coloring</h3>
+                    <p>Professional coloring services including gray coverage, highlights, and toning</p>
+                    <span class="price">750 - 1200</span>
+                    <div class="service-meta">
+                        <span class="duration"><i class="far fa-clock"></i> 1.5 hrs</span>
+                        <button class="book-btn" onclick="openBookingForm('Hair Coloring')">Book Now</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Service 5 -->
+            <div class="service-card">
+                <img src="img/hair and beard.jpeg" alt="Hair & Beard">
+                <div class="service-info">
+                    <h3>Haircut & Beard Package</h3>
+                    <p>Complete grooming package including haircut, beard trim, and hot towel treatment</p>
+                    <span class="price">70 - 100</span>
+                    <div class="service-meta">
+                        <span class="duration"><i class="far fa-clock"></i> 1 hr</span>
+                        <button class="book-btn" onclick="openBookingForm('Haircut & Beard Package')">Book Now</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Service 6 -->
+            <div class="service-card">
+                <img src="img/scalp treatment.jpeg" alt="Scalp Treatment">
+                <div class="service-info">
+                    <h3>Scalp Treatment</h3>
+                    <p>Revitalizing treatment to cleanse, exfoliate and moisturize the scalp</p>
+                    <span class="price">40 - 60</span>
+                    <div class="service-meta">
+                        <span class="duration"><i class="far fa-clock"></i> 30 min</span>
+                        <button class="book-btn" onclick="openBookingForm('Scalp Treatment')">Book Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!--  camera opening section -->
+<section id="virtual-tryon" class="virtual-tryon-section" style="padding: 6rem 5%; background: #fff; text-align: center;">
+    <h2 class="section-title">Virtual Hairstyle Try-On</h2>
+    <p class="section-subtitle">Upload your photo to discover hairstyles that suit your face shape</p>
+    
+    <div class="tryon-container" style="max-width: 800px; margin: 2rem auto;">
+        <div class="tryon-interface" style="display: flex; flex-direction: column; gap: 1.5rem;">
+            <div class="camera-upload" style="display: flex; justify-content: center; gap: 1rem;">
+                <button id="openCameraBtn" class="btn" style="padding: 0.8rem 1.5rem;">Use Camera</button>
+                <button id="uploadBtn" class="btn btn-outline" style="padding: 0.8rem 1.5rem;">Upload Photo</button>
+                <input type="file" id="fileInput" accept="image/*" style="display: none;">
+            </div>
+            
+            <div class="preview-area" style="position: relative; margin: 0 auto;">
+                <video id="cameraFeed" autoplay playsinline style="display: none; max-width: 100%; border: 2px solid #d4af37; border-radius: 5px;"></video>
+                <canvas id="photoCanvas" style="display: none; max-width: 100%; border: 2px solid #d4af37; border-radius: 5px;"></canvas>
+                <div id="placeholder" style="width: 400px; height: 400px; background: #f5f5f5; display: flex; align-items: center; justify-content: center;
+                 margin: 0 auto; border: 2px dashed #d4af37; border-radius: 5px;">
+                    <p style="color: #777;">Your image will appear here</p>
+                </div>
+                <button id="captureBtn" class="btn" style="display: none; margin-top: 1rem; padding: 0.8rem 1.5rem;">Capture Photo</button>
+            </div>
+            
+            <button id="analyzeBtn" class="btn" style="padding: 1rem 2rem; margin-top: 1rem; display: none;">
+                <i class="fas fa-magic" style="margin-right: 8px;"></i> Analyze My Face
+            </button>
+            
+            <div id="results" style="display: none; margin-top: 2rem;">
+                <h3 style="font-family: 'Playfair Display', serif; color: #d4af37; margin-bottom: 1rem;">Recommended Hairstyles</h3>
+                <div id="hairstyleSuggestions" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem;"></div>
+            </div>
+        </div>
+        <button id="myButton">Click Me</button>
+    </div>
+</section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section">
+        <h2 class="section-title">Client Testimonials</h2>
+        <p class="section-subtitle">Hear what our clients say about their experience</p>
+        
+        <div class="testimonials-container">
+            <div class="testimonial">
+                <p class="testimonial-text">"The best barber experience I've ever had. We took the time to understand exactly what I wanted and delivered beyond expectations. The hot towel shave was incredibly relaxing."</p>
+                <div class="testimonial-author">
+                    <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486" alt="Nitesh" class="author-img">
+                    <div class="author-info">
+                        <h4>Nitesh Kumar Mourya</h4>
+                        <p>Regular Client for 3 years</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <h2 class="section-title">Our Work</h2>
+        <p class="section-subtitle">Browse through our portfolio of transformations</p>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item" onclick="openGalleryModal('https://unsplash.com/photos/barber-shop-tools-on-old-wooden-background-cCRNOTyXl18')">
+                <img src="img\beard trim.jpeg" alt="Haircut">
+                <div class="gallery-overlay">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openGalleryModal('https://unsplash.com/photos/man-sitting-on-barbers-chair-IvQeAVeJULw')">
+                <img src="img\img 2.avif" alt="Beard Trim">
+                <div class="gallery-overlay">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openGalleryModal('https://unsplash.com/photos/man-cutting-hair-man--sRVfY0f2d8')">
+                <img src="img\hot-towel-shave.jpg" alt="Shave">
+                <div class="gallery-overlay">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openGalleryModal('https://unsplash.com/photos/man-in-black-shirt-with-tattoo-on-his-left-arm-1Pmp9uxK8X8')">
+                <img src="img\slick back.jpg" alt="Hair & Beard">
+                <div class="gallery-overlay">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openGalleryModal('https://unsplash.com/photos/man-in-black-shirt-with-tattoo-on-his-left-arm-1Pmp9uxK8X8')">
+                <img src="img\scalp treatment.jpeg" alt="Styling">
+                <div class="gallery-overlay">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openGalleryModal('https://images.unsplash.com/photo-1605497788044-5a32c7078486')">
+                <img src="img\img 2.avif" alt="Barber Work">
+                <div class="gallery-overlay">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <h2 class="section-title">Visit Us</h2>
+        <p class="section-subtitle" style="color: #ccc;">We'd love to see you in our shop</p>
+        
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Address</h4>
+                            <p>XXX Hair Saloon<br>Gorakhpur, UP</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Phone</h4>
+                            <p><a href="tel:+1234567890">6307830082</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Email</h4>
+                            <p><a href="mailto:info@gentsgrooming.com">info@gentssaalon.com</a></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3 style="margin-top: 2.5rem;">Business Hours</h3>
+                <div class="hours-list">
+                    <div class="hours-item">
+                        <span class="hours-day">Monday - Friday</span>
+                        <span>9:00 AM - 7:00 PM</span>
+                    </div>
+                    <div class="hours-item">
+                        <span class="hours-day">Saturday</span>
+                        <span>10:00 AM - 5:00 PM</span>
+                    </div>
+                    <div class="hours-item">
+                        <span class="hours-day">Sunday</span>
+                        <span>Closed</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <h3>Send Us a Message</h3>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="contact-name">Your Name</label>
+                        <input type="text" id="contact-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-email">Email</label>
+                        <input type="email" id="contact-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-subject">Subject</label>
+                        <input type="text" id="contact-subject">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-message">Message</label>
+                        <textarea id="contact-message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+<!-- Booking Modal -->
+<div id="bookingModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeBookingForm()">&times;</span>
+        <h2 id="serviceTitle">Book Your Appointment</h2>
+        <form id="bookingForm" class="booking-form">
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="service">Service</label>
+                    <select id="service" name="service" required>
+                        <option value="">Select a service</option>
+                        <option value="Classic Haircut">Classic Haircut (price)</option>
+                        <option value="Beard Trim & Shape">Beard Trim & Shape (price)</option>
+                        <option value="Hot Towel Shave">Hot Towel Shave (price)</option>
+                        <option value="Hair Coloring">Hair Coloring (price)</option>
+                        <option value="Haircut & Beard Package">Haircut & Beard Package (price)</option>
+                        <option value="Scalp Treatment">Scalp Treatment (price)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="date">Preferred Date</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="time">Preferred Time</label>
+                    <input type="time" id="time" name="time" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="barber">Preferred Barber (optional)</label>
+                <select id="barber" name="barber">
+                    <option value="">Any Barber</option>
+                    <option value="James Wilson">Brijesh</option>
+                    <option value="Marcus Chen">Nitesh</option>
+                    <option value="David Rodriguez">Smriti</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="notes">Special Requests</label>
+                <textarea id="notes" name="notes" rows="3"></textarea>
+            </div>
+
+            <button type="submit" class="btn" style="width: 100%; padding: 1rem;">
+                Confirm Booking
+            </button>
+
+        </form>
+    </div>
+</div>
+
+
+    <!-- Gallery Modal -->
+    <div id="galleryModal" class="modal">
+        <div class="modal-content" style="background: transparent; max-width: 90%; padding: 0; box-shadow: none;">
+            <span class="close-btn" onclick="closeGalleryModal()" style="color: white; font-size: 2.5rem; top: 20px; right: 30px;">&times;</span>
+            <img id="galleryModalImg" src="" alt="" style="width: 100%; max-height: 80vh; object-fit: contain;">
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Gentleman's Salon</h3>
+                <p>Premium barber services for the modern man. Experience the perfect blend of traditional techniques and contemporary styles.</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#stylists">Our Barbers</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <p>Subscribe to receive updates and special offers.</p>
+                <form id="newsletterForm" style="margin-top: 1rem;">
+                    <input type="email" placeholder="Your Email" style="width: 100%; padding: 0.7rem; margin-bottom: 0.5rem; background: #222; border: none; color: white;">
+                    <button type="submit" class="btn" style="width: 100%; padding: 0.7rem; font-size: 0.9rem;">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Gentleman's Salon. All rights reserved.</p>
+        </div>
+    </footer>
+<script src="index.js"></script>
+<script src="server.js"></script>
+    
+</body>
+</html>
+
